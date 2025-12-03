@@ -1,5 +1,6 @@
 # 🔐 ssh-mcp-server
 
+![NPM Version](https://img.shields.io/npm/v/%40fangjunjie%2Fssh-mcp-server?label=%40fangjunjie%2Fssh-mcp-server)
 ![GitHub forks](https://img.shields.io/github/forks/classfang/ssh-mcp-server)
 ![GitHub Repo stars](https://img.shields.io/github/stars/classfang/ssh-mcp-server)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/classfang/ssh-mcp-server)

@@ -8,7 +8,6 @@
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/classfang/ssh-mcp-server)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr-closed/classfang/ssh-mcp-server)
 
-
 SSH-based MCP (Model Context Protocol) server that allows remote execution of SSH commands via the MCP protocol.
 
 English Document | [中文文档](README_CN.md)
@@ -16,6 +15,10 @@ English Document | [中文文档](README_CN.md)
 ## 📝 Project Overview
 
 ssh-mcp-server is a bridging tool that enables AI assistants and other applications supporting the MCP protocol to execute remote SSH commands through a standardized interface. This allows AI assistants to safely operate remote servers, execute commands, and retrieve results without directly exposing SSH credentials to AI models.
+
+Wechat MCP Technical Exchange Group:
+
+![wx_1.png](images/wx_1.png)
 
 ## ✨ Key Features
 

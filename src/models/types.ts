@@ -78,4 +78,5 @@ export interface ServerStatus {
 export interface ParsedArgs {
   configs: SshConnectionConfigMap;
   preConnect: boolean;
+  noPathValidation: boolean;
 }

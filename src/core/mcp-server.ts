@@ -33,6 +33,7 @@ export class SshMcpServer {
     // Initialize SSH configuration
     const parsedArgs = CommandLineParser.parseArgs();
     this.sshManager.setConfig(parsedArgs.configs);
+    this.sshManager.setNoPathValidation(parsedArgs.noPathValidation);
 
     // Security warning
     const allConfigs = Object.values(parsedArgs.configs);

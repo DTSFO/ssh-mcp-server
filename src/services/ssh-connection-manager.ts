@@ -17,6 +17,7 @@ export class SSHConnectionManager {
   private connected: Map<string, boolean> = new Map();
   private statusCache: Map<string, ServerStatus> = new Map();
   private defaultName: string = "default";
+  private noPathValidation: boolean = false;
 
   private constructor() {}
 
@@ -28,6 +29,16 @@ export class SSHConnectionManager {
       SSHConnectionManager.instance = new SSHConnectionManager();
     }
     return SSHConnectionManager.instance;
+  }
+
+  /**
+   * Set path validation mode
+   */
+  public setNoPathValidation(value: boolean): void {
+    this.noPathValidation = value;
+    if (value) {
+      Logger.log("WARNING: Path validation is disabled. Local file operations are unrestricted.", "info");
+    }
   }
 
   /**
@@ -352,10 +363,16 @@ export class SSHConnectionManager {
    */
   private validateLocalPath(localPath: string): string {
     const resolvedPath = path.resolve(localPath);
+
+    // Skip validation if noPathValidation is enabled
+    if (this.noPathValidation) {
+      return resolvedPath;
+    }
+
     const workingDir = process.cwd();
     if (!resolvedPath.startsWith(workingDir)) {
       throw new Error(
-        `Path traversal detected. Local path must be within the working directory.`
+        `Path traversal detected. Local path must be within the working directory. Use --no-path-validation to disable this check.`
       );
     }
     return resolvedPath;
